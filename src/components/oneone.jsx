@@ -1,19 +1,54 @@
 import React, { Component } from 'react';
-
-
+import frontImg from '../img/deadpool.png'
+import backImg from '../img/Frame2.jpg'
 let rotateA = null;
 let rotateB = null;
 let elemA = "";
 let elemB = "";
+let imgA = "";
+let imgB = "";
 let canRotate = 0;
-let x="";
-let y="";
+//var nowImg = document.getElementById("cardImg");
 class Oneone extends Component {
-    state = {   }
+    state = { 
+        nowImg : document.getElementById("cardImg")
+    }
+    doRotate = (element) => {
+        document.getElementById(element).style.transform = "rotateY(90deg)";
+        setTimeout( () => {
+            let nnn = document.getElementById("cardImg");
+            nnn.setAttribute("src",backImg);
+            //nowImg = backImg;
+            //nowImg.setAttribute("src",backImg);
+            console.log(this.state.nowImg);
+            document.getElementById(element).style.transform = "rotateY(180deg)";
+        },500)
+        
+    }
+    dontRotate = (element) => {
+        document.getElementById(element).style.transform = "rotateY(90deg)";
+        setTimeout( () => {
+            let nnn = document.getElementById("cardImg");
+            nnn.setAttribute("src",frontImg);
+            //nowImg = frontImg;
+            //nowImg.setAttribute("src",frontImg);
+            console.log(this.state.nowImg);
+            document.getElementById(element).style.transform = "rotateY(0deg)";
+        },500)
+        
+    }
     flip = () => {
         console.log(canRotate);
-        if(rotateA === null){rotateA = this.props.name; elemA = this.props.number}
-        else {rotateB = this.props.name; elemB = this.props.number}
+        if(rotateA === null){
+            rotateA = this.props.name;
+            elemA = this.props.number;
+            imgA = this.props.imgS;
+            }
+        else {
+            rotateB = this.props.name;
+            elemB = this.props.number;
+            imgB = this.props.imgS;
+            }
 
         if (canRotate === 2 && ! document.getElementById(this.props.number).style.transform === "rotateY(180deg)") {
             
@@ -21,85 +56,36 @@ class Oneone extends Component {
         else {
             
             if (canRotate === 1){
-                document.getElementById(elemB).style.transform = "rotateY(180deg)";
+                this.doRotate(elemB);
                 canRotate++;
                 setTimeout( () => {
                     if(rotateA === rotateB){
-                        document.getElementById(elemA).style.transform = "rotateY(180deg)";
-                        document.getElementById(elemB).style.transform = "rotateY(180deg)";    
+                        this.doRotate(elemA); 
+                        this.doRotate(elemB);
                         console.log("equal");
                     }else{
-                        document.getElementById(elemA).style.transform = "rotateY(0deg)";
-                        document.getElementById(elemB).style.transform = "rotateY(0deg)";
+                        this.dontRotate(elemA);
+                        this.dontRotate(elemB);
                         console.log("not equal");
                     }
                     canRotate=0;
                     elemB=elemA="";
                     rotateA=rotateB=null;
-                },1000)
+                },1500)
                 
             }else{
-            document.getElementById(elemA).style.transform = "rotateY(180deg)";
+            this.doRotate(elemA);
             canRotate++;
             }
             
         }
 
-
-        // console.log(this.props.number); 
-        // let num = this.props.number;
-        // //document.getElementsByClassName("one").style.marginTop = "0px";
-        // document.getElementById(this.props.number).style.transform = "rotateY(180deg)";
-        // console.log(document.getElementById(this.props.number).style.transform);
     }
     render() { 
-        return ( <div onClick={ this.flip } >
-            <img   alt=""/>
-            <h1  className="one">card  {this.props.name}</h1>
+        return ( <div className="one" onClick={ this.flip } >
+            <img id="cardImg"   alt="" width="100%" height="100%" />
+            <h1>card  {this.props.name}</h1>
         </div> );
     }
 }
-
 export default Oneone;
-
-
-    //if (bool){
-    //     rotate = "90deg"; 
-    //     setTimeout(function(){ pic=img; console.log("img1"); rotate="180deg"; this.setState({rotate:"rotateY("+rotate+")"})}, 600);
-    //     bool=false;
-    // }
-    // else{
-    //     rotate = "-90deg"; 
-    //     setTimeout(function(){ pic=img2; console.log("img2"); rotate="0deg";}, 500);
-    //     bool=true ;
-    // }
-    // this.setState(
-    //     {
-    //         rotate : "rotateY("+rotate+")",
-    //         Imag : pic
-    //     }
-    //     );
-    // console.log(this.state.Imag);
-
-    //secound
-    // if (bool) {
-            
-    //     pic=img2;
-    //     console.log(this.props.rotate); //"90deg";
-    //     setTimeout(()=>{
-    //         console.log(this.props.rotate); //"180deg";
-    //         console.log("timer true");
-    //     },2000);
-    //     bool = false;
-    // }
-    // else {
-        
-
-    //     pic=img;
-    //     console.log(this.props.rotate); // = "90deg";
-    //     setTimeout(()=>{
-    //         console.log(this.props.rotate); //= "0deg";
-    //         console.log("timer false");
-    //     },2000);
-    //     bool = true;
-    // }

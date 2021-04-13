@@ -24,7 +24,7 @@ code {
   
 }
 .card{
-  background-color: rgb(216, 198, 32);
+  background-color: rgb(216, 90, 32);
   font-size: 5px;
   width: 100px;
   height: 100px;
@@ -33,5 +33,15 @@ code {
   transition: all 1s linear;
 }
 .one{
-  background-color: rgba(129, 14, 129, 0.158);
+  background-color: rgb(51, 231, 255);
+  height: 100%;
+  font-size: 10px;
+  color: rgb(235, 247, 70);
+  position: relative;
+}
+.one img{
+  position: absolute;
+}
+.one h1{
+  position: absolute;
 }
