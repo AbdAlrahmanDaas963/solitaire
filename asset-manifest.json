@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/solit3/static/css/main.eee81e50.chunk.css",
+    "main.js": "/solit3/static/js/main.2c578cf3.chunk.js",
+    "main.js.map": "/solit3/static/js/main.2c578cf3.chunk.js.map",
+    "runtime-main.js": "/solit3/static/js/runtime-main.9c8eec45.js",
+    "runtime-main.js.map": "/solit3/static/js/runtime-main.9c8eec45.js.map",
+    "static/js/2.02b4b31e.chunk.js": "/solit3/static/js/2.02b4b31e.chunk.js",
+    "static/js/2.02b4b31e.chunk.js.map": "/solit3/static/js/2.02b4b31e.chunk.js.map",
+    "static/js/3.863d0b07.chunk.js": "/solit3/static/js/3.863d0b07.chunk.js",
+    "static/js/3.863d0b07.chunk.js.map": "/solit3/static/js/3.863d0b07.chunk.js.map",
+    "index.html": "/solit3/index.html",
+    "static/css/main.eee81e50.chunk.css.map": "/solit3/static/css/main.eee81e50.chunk.css.map",
+    "static/js/2.02b4b31e.chunk.js.LICENSE.txt": "/solit3/static/js/2.02b4b31e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9c8eec45.js",
+    "static/js/2.02b4b31e.chunk.js",
+    "static/css/main.eee81e50.chunk.css",
+    "static/js/main.2c578cf3.chunk.js"
+  ]
+}
